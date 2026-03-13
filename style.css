@@ -22,15 +22,34 @@ header {
 .header-grid {
     display: grid;
     place-items: center;
+    align-items: center;
 }
 
 .input-grid {
     display: grid;
     place-items: center;
+    width: auto;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "label1 label2"
+        "input1 input2";
+    gap: 1rem;
+    margin: 0 auto;
 }
+
+#amount-due-label {grid-area: label1;}
+#amount-received-label {grid-area: label2;}
+#amount-due { grid-area: input1;}
+#amount-received { grid-area: input2; }
 
 button {
     height: auto;
     width: auto;
+    display: block;
+    margin: 5rem auto;
+}
+
+label {
+    color:antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
 }
