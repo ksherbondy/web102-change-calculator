@@ -96,7 +96,8 @@ button {
     margin: 5rem auto;
 }
 
-label {
+label, p {
     color:antiquewhite;
     font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
 }
