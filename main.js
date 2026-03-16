@@ -15,23 +15,25 @@ function findDollars(dollars) {
     let remainingDollars = dollars;
     const denominations = [20,10,5,2,1];
     let results = [];
-    for (let dollars of denominations) {
+    for (let bill of denominations) {
         results.push(Math.floor(remainingDollars / dollars));
         remainingDollars %= dollars;
     }
     return results;
 }
 
-function displayResults(dollars, dollarsArray, centArray) {
+function displayResults(dollars, cents, dollarsArray, centArray) {
     const centIds = ["quarters-output", "dimes-output", "nickels-output", "pennies-output"];
     const dollarIds = ["twenties-output", "tens-output", "fives-output", "twos-output", "ones-output"];
     document.getElementById("dollars-output").textContent = dollars;
+    document.getElementById("cents-output").textContent = cents;
     for(let i = 0; i < centIds.length; i++) {
         document.getElementById(centIds[i]).textContent = centArray[i];
     }
     for(let i = 0; i < dollarIds.length; i++) {
         document.getElementById(dollarIds[i]).textContent = dollarsArray[i];
     }
+    
 }
 
 function handleClickEvent(e) {
@@ -42,6 +44,6 @@ function handleClickEvent(e) {
     const cents = Math.round((totalChange - dollars) * 100);
     const dollarsArray = findDollars(dollars);
     const centArray = findCents(cents);
-    displayResults(dollars, dollarsArray, centArray);
+    displayResults(dollars, cents, dollarsArray, centArray);
 
 }

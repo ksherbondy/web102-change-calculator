@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    background-image: url('./assets/background.jpg');
+    background-image: url('./assets/image.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,6 +36,53 @@ header {
     gap: 1rem;
     margin: 0 auto;
 }
+
+.change-grid {
+    display: grid;
+    place-items: center;
+    width: auto;
+    gap: 1rem;
+    margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr );
+    grid-template-areas: 
+        "blank1 blank2 dollars-row blank3 blank4"
+        "blank5 blank6 dollars-out blank7 blank8"
+        "label1 label2 label3 label4 label5"
+        "label1out label2out label3out label4out label5out"
+        "blank9 blank10 cents-row blank11 blank12"
+        "blank13 blank14 cents-out blank15 blank16"
+        "label6 label7 label8 label9 blank17"
+        "label6out label7out label8out label9out blank18"
+    ;
+}
+
+#dollars {grid-area: dollars-row;}
+#twenty {grid-area: label1;}
+#tens {grid-area: label2;}
+#fives {grid-area: label3;}
+#twos {grid-area: label4;}
+#ones {grid-area: label5;}
+#cents {grid-area: cents-row;}
+#dollars-output {grid-area: dollars-out;}
+#twenties-output {grid-area: label1out;}
+#tens-output {grid-area: label2out;}
+#fives-output {grid-area: label3out;}
+#twos-output {grid-area: label4out;}
+#ones-output {grid-area: label5out;}
+
+#cents {grid-area: cents-row;}
+#quarters {grid-area: label6;}
+#dimes {grid-area: label7;}
+#nickels {grid-area: label8;}
+#pennies {grid-area: label9;}
+#cents-output {grid-area: cents-out;}
+#quarters-output {grid-area: label6out;}
+#dimes-output {grid-area: label7out;}
+#nickels-output {grid-area: label8out;}
+#pennies-output {grid-area: label9out;}
+
+
+
 
 #amount-due-label {grid-area: label1;}
 #amount-received-label {grid-area: label2;}
